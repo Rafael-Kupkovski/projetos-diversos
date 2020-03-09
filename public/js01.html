@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Titulos</title>
+</head>
+<body>
+
+    <input id="txtTarefa" type="text" placeholder="Nome da tarefa">
+    <button>Adicionar</button>
+
+    <script>
+        //Criar um gerenciador de tarefas utilizando somente javascript
+        //-> Armazenar lista de tarefas no localStorage
+        //-> Mostrar uma lista com as tarefas armazenadas no localStorage
+        //-> Adicionar novas tarefas na lista
+        var listaDeTarefas = {
+            "listaDetarefas" : [
+                {id: 1, titulo : "Olhar o moodle"},
+                {id: 2, titulo : "Fazer chamada"}
+            ]
+        }
+
+        //Array Push// adicionar elementos no array
+
+        console.log( listaDeTarefas )
+
+        //Converter meu objeto lista de tarefas para string e armazenar
+        //no navegador
+        localStorage.setItem("listaDeTeras", JSON.stringify( listaDeTarefas ) )
+
+
+    </script>
+
+
+    <ul id="ulListaDeTarefas">
+        <li>Postar trabalho no moodle</li>
+        <li>Fazer chamada</li>
+    </ul>
+    <br><br>
+
+    Sintaxe Javascript
+
+    <div id="dadosCep">
+        <h2>Dados do CEP</h2>
+        <span class="localidade">Localidade: </span>
+    </div>
+
+
+
+    <script>
+
+        console.log( "Imprimir no console..." );
+
+        console.log('Documento HTML', document )
+        console.log('Imprimindo soh o body', document.body )
+        console.log('Tipo de Documento', typeof(document)  )
+
+        document.body.innerHTML += "<br>Nova informacao...";
+        document.write("Escrever no documento....")
+
+        //array
+        var numeros = [10, 20, 30, 40, 50];
+        console.log( numeros );
+
+        //Adicionar um novo elemento no array
+        numeros.push( 100 )
+        console.log( numeros );
+
+        numeros.pop();//Remove o ultimo elemento do array
+        numeros.pop();
+        numeros.shift();//Remove o primeiro elemento
+        console.log( numeros );
+
+        //objeto
+        var pessoa = { nome : "Joao", idade: 20 }
+        console.log( pessoa )
+
+        var pessoas = [
+            {nome:'Daniel', idade:22},
+            {nome:'Lucas', idade:20}
+            ]
+
+
+        console.log(pessoas);
+
+        let x = 1;
+        while( x <= 10 ){
+            console.log( x );
+            x++;
+        }
+
+        var nomes = ["Pedro", "Paulo", "Maria", "Jose"];
+        console.log( nomes )//Mostrar no console todos os elementos do array
+        console.log( nomes[0] );
+        console.log( nomes[1] );
+
+        console.log( "Quantos elemtnos tem no array: "+nomes.length )
+        x = 0;
+        // nomes.length //Retorna quantos elementos tem no array
+        while( x < nomes.length ){
+            console.log( nomes[ x ] );
+            x++;
+        }
+
+        console.log( "Utilizando forEach" )
+        nomes.forEach( function( nome ){
+            console.log( "Nome: "+nome )
+        });
+
+
+
+        console.log("=>")
+        //nomes.forEach( nome => console.log(nome) )
+        nomes.forEach( nome => {
+            console.log(nome)
+            console.log(nome)
+        })
+
+        console.log("Pesquisa dentro do if")
+
+        if(nomes[0].includes("Pedro")){
+            console.log("Esse eh o nome do Pedro")
+        }
+
+        var aluno = {
+            ra : "000123",
+            nome : "Lucas",
+            professor : { nome : "Weslei", disciplina: "Prog" }
+        };
+
+    console.log( aluno )
+    console.log( "Tipo de dados da variavel aluno"+typeof( aluno ) )
+
+    //Converter um objeto para string
+    var alunoJSONtexto = JSON.stringify(aluno)
+    console.log( alunoJSONtexto )
+    console.log( typeof(alunoJSONtexto) )
+
+    //http://dontpad.com/cep
+    var txtCep = "{\n" +
+        "  \"cep\": \"80215-040\",\n" +
+        "  \"logradouro\": \"Rua Felipe Camarão\",\n" +
+        "  \"complemento\": \"até 534/535\",\n" +
+        "  \"bairro\": \"Rebouças\",\n" +
+        "  \"localidade\": \"Curitiba\",\n" +
+        "  \"uf\": \"PR\",\n" +
+        "  \"unidade\": \"\",\n" +
+        "  \"ibge\": \"4106902\",\n" +
+        "  \"gia\": \"\"\n" +
+        "}";
+    console.log( txtCep )
+    console.log( typeof(txtCep) )
+
+    //Converter texto para objeto
+    var objCep = JSON.parse( txtCep )
+    console.log( objCep )
+    console.log( typeof( objCep ) )
+
+    console.log("Manipular elementos da tela...");
+
+    //Pegar um elemento atraves da class ou ID
+    console.log("Localidade");
+    var localidade = document.querySelector('.localidade')
+    console.log( document.querySelector('.localidade') )
+    console.log( document.querySelector('#dadosCep') )
+
+    //Alterar o conteudo que esta dentro do meu elemento
+    //localidade.textContent = "Localidade: "+objCep.localidade;
+    localidade.textContent += objCep.localidade;
+    console.log( objCep )
+
+    document.querySelector('#dadosCep').innerHTML += "<br>cep: "+objCep.cep;
+    document.querySelector('#dadosCep').innerHTML += "<br>logradouro: "+objCep.logradouro;
+    document.querySelector('#dadosCep').innerHTML += "<br>bairro: "+objCep.bairro;
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="getProdutos()">
+    Produtos
+    <br>
+    <input type="text" id="txtProduto" placeholder="Nome do Produto">
+    <input type="number" id="numValor" placeholder="Valor do Produto">
+    <input type="number" id="numQtd" placeholder="Digite a quantidade">
+    <button onclick="addProduto()">Adicionar</button>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <td>Produto</td>
+                <td>Valor</td>
+            </tr>
+        </thead>
+        <tbody class="listaDeProdutos">
+        </tbody>
+    </table>
+
+    <h1>Pesquisar CEP</h1>
+    <input type="text" id="txtCep" value="80215-040">
+    
+    <button onclick="pesquisarCep()">Pesquisar</button>
+
+    <script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script>
+        $("input[id*='txtCep']").inputmask({
+            mask: ['99999-999'],
+            keepStatic: true
+        });
+    </script>
+    <script src="produto.js"></script>
+</body>
+</html>
