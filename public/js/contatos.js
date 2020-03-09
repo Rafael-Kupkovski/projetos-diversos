@@ -4,7 +4,7 @@ function salvarContato() {
     
     if(txtNome.value != '' && txtTelefone.value != ''){
         btnSalvar.disabled = true;
-        fetch('http://localhost:8000/contatos', {
+        fetch('contatos', {
             method: 'POST',
             body: `nome=${txtNome.value}&telefone=${txtTelefone.value}`,
             headers: new Headers({ 'Content-type': 'application/x-www-form-urlencoded'})
@@ -26,7 +26,7 @@ function salvarContato() {
 function createList(){
     listDeContatos.innerHTML = '';
 
-    fetch('http://localhost:8000/contatos')
+    fetch('contatos')
         .then(req => req.json())
         .then(data => {
             
@@ -60,14 +60,14 @@ function ligou(ligou){
 }
 
 function setLigou(id){
-    fetch('http://localhost:8000/contatos/ligou/'+id)
+    fetch('contatos/ligou/'+id)
     .then(req => {
         createList();
     });
 }
 
 function excluirContato(value) {
-    fetch('http://localhost:8000/contatos/'+value,
+    fetch('contatos/'+value,
         {
             method: 'DELETE',
         }
@@ -78,7 +78,7 @@ function excluirContato(value) {
 }
 
 function buscarContato(value) {
-    fetch('http://localhost:8000/contatos/'+value,)
+    fetch('contatos/'+value,)
         .then(req => req.json())
         .then(data => {
             txtNome.value = data.nome;
@@ -93,7 +93,7 @@ function alterarContato(value) {
     
     if(txtNome.value != '' && txtTelefone.value != ''){
         btnSalvar.disabled = true;
-        fetch('http://localhost:8000/contatos/'+value, {
+        fetch('contatos/'+value, {
             method: 'PUT',
             body: `nome=${txtNome.value}&telefone=${txtTelefone.value}`,
             headers: new Headers({ 'Content-type': 'application/x-www-form-urlencoded'})
@@ -116,7 +116,7 @@ function alterarContato(value) {
 }
 
 function cadastrarMensagem(value) {
-    fetch('http://localhost:8000/contatos/'+value,)
+    fetch('contatos/'+value,)
         .then(req => req.json())
         .then(data => {
             txtNome.value = data.nome;
@@ -132,7 +132,7 @@ function cadastrarMensagem(value) {
 function salvarMensagem(value) {    
     if(txtMensagem.value != ''){
         btnSalvar.disabled = true;
-        fetch('http://localhost:8000/contatosmsgs', {
+        fetch('contatosmsgs', {
             method: 'POST',
             body: `contato_id=${value}&msg=${txtMensagem.value}`,
             headers: new Headers({ 'Content-type': 'application/x-www-form-urlencoded'})
@@ -164,7 +164,7 @@ function getContatoMsgs(value) {
     if(value == ''){
         listaDeMensagens.innerHTML = '';
     }else{
-        fetch('http://localhost:8000/contatosmsgs/contato/'+value)
+        fetch('contatosmsgs/contato/'+value)
         .then(req => req.json())
         .then(data => {
             listaDeMensagens.innerHTML = '';
@@ -191,7 +191,7 @@ function getContatoMsgs(value) {
 }
 
 function excluirMensagem(value) {
-    fetch('http://localhost:8000/contatosmsgs/'+value,
+    fetch('contatosmsgs/'+value,
         {
             method: 'DELETE',
         }
@@ -202,7 +202,7 @@ function excluirMensagem(value) {
 }
 
 function buscarMensagem(value) {
-    fetch('http://localhost:8000/contatosmsgs/'+value,)
+    fetch('contatosmsgs/'+value,)
         .then(req => req.json())
         .then(data => {
             console.log(data);
@@ -226,7 +226,7 @@ function alterarMensagem(value) {
     
     if(txtMensagem.value != ''){
         btnSalvar.disabled = true;
-        fetch('http://localhost:8000/contatosmsgs/'+value, {
+        fetch('contatosmsgs/'+value, {
             method: 'PUT',
             body: `msg=${txtMensagem.value}`,
             headers: new Headers({ 'Content-type': 'application/x-www-form-urlencoded'})
