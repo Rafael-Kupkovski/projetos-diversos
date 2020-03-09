@@ -10,70 +10,71 @@
         <title>Contatos</title>
     </head>
     <body onload="createList()">
-        
-        <div class="container">
-            <div class="col-md-12">
-                <h3>Controle de Contatos</h3>                
-            </div>
-        </div>
-        <br>
-        <div class="row">            
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nome" id="txtNome">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Telefone" id="txtTelefone">
-                </div>
-            </div>    
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <button id="btnSalvar" class="btn btn-primary col-md-2 float-right" onclick="salvarContato()">Novo</button>
-            </div>            
-        </div>
-        <br>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Ligou</th>
-                    <th scope="col" colspan="4">Ação</th>
-                </tr>
-            </thead>
-            <tbody id="listaDeContatos">
-            </tbody>
-        </table>
-        <hr>
-        <div class="row">
-            <div class="col-md-12">
-                <label style="font-weight: bold;">Selecione o contato para ver suas mensagens:</label>
-                <select id="selectContato" class="form-control" onchange="getContatoMsgs(value)">
-                    <option value="" selected>
-                        Selecione o contato
-                    </option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <table class="table table-striped table-dark">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">Contato</th>
-                <th scope="col">Mensagem</th>
-                <th scope="col">Data de Envio</th>
-                <th scope="col" colspan="2">Ação</th>
-                </tr>
-            </thead>
-            <tbody id="listaDeMensagens">
-            </tbody>
-        </table>
-    </div>
+	<div class="container">        
+		<div class="container">
+		    <div class="col-md-12">
+		        <h3>Controle de Contatos</h3>                
+		    </div>
+		</div>
+		<br>
+		<div class="row">            
+		    <div class="col-md-6">
+		        <div class="form-group">
+		            <input type="text" class="form-control" placeholder="Nome" id="txtNome">
+		        </div>
+		    </div>
+		    <div class="col-md-6">
+		        <div class="form-group">
+		            <input type="text" class="form-control" placeholder="Telefone" id="txtTelefone">
+		        </div>
+		    </div>    
+		</div>
+		<div class="row">
+		    <div class="col-md-12">
+		        <button id="btnSalvar" class="btn btn-primary col-md-2 float-right" onclick="salvarContato()">Novo</button>
+		    </div>            
+		</div>
+		<br>
+		<table class="table table-hover">
+		    <thead>
+		        <tr>
+		            <th scope="col">ID</th>
+		            <th scope="col">Nome</th>
+		            <th scope="col">Telefone</th>
+		            <th scope="col">Ligou</th>
+		            <th scope="col" colspan="4">Ação</th>
+		        </tr>
+		    </thead>
+		    <tbody id="listaDeContatos">
+		    </tbody>
+		</table>
+		<hr>
+		<div class="row">
+		    <div class="col-md-12">
+		        <label style="font-weight: bold;">Selecione o contato para ver suas mensagens:</label>
+		        <select id="selectContato" class="form-control" onchange="getContatoMsgs(value)">
+		            <option value="" selected>
+		                Selecione o contato
+		            </option>
+		        </select>
+		    </div>
+		</div>
+		<br>
+		<table class="table table-striped table-dark">
+		    <thead>
+		        <tr>
+		        <th scope="col">#</th>
+		        <th scope="col">Contato</th>
+		        <th scope="col">Mensagem</th>
+		        <th scope="col">Data de Envio</th>
+		        <th scope="col" colspan="2">Ação</th>
+		        </tr>
+		    </thead>
+		    <tbody id="listaDeMensagens">
+		    </tbody>
+		</table>
+	    </div>
+	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
